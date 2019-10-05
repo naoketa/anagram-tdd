@@ -1,5 +1,3 @@
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.arrayContainingInAnyOrder;
 import static org.hamcrest.core.IsCollectionContaining.hasItems;
 import static org.junit.Assert.assertThat;
 
@@ -17,6 +15,12 @@ public class AnagramTest {
   public void extract_anagram_from_two_chars(){
     List<String> actual = Anagram.getAnagram("ab");
     assertThat(actual, hasItems("ab", "ba"));
+  }
+
+  @Test
+  public void extract_anagram_from_three_chars(){
+    List<String> actual = Anagram.getAnagram("abc");
+    assertThat(actual, hasItems("abc", "acb", "bac", "bca", "cab", "cba"));
   }
 
 }
