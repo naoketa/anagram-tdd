@@ -13,4 +13,10 @@ public class AnagramTest {
     assertThat(actual, hasItems("a"));
   }
 
+  @Test
+  public void extract_anagram_from_two_chars(){
+    List<String> actual = Anagram.getAnagram("ab");
+    assertThat(actual, hasItems("ab", "ba"));
+  }
+
 }
