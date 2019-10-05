@@ -23,4 +23,10 @@ public class AnagramTest {
     assertThat(actual, hasItems("abc", "acb", "bac", "bca", "cab", "cba"));
   }
 
+  @Test
+  public void extract_anagram_from_same_chars(){
+    List<String> actual = Anagram.getAnagram("aab");
+    assertThat(actual, hasItems("aab", "baa", "aba"));
+  }
+
 }
